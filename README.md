@@ -78,15 +78,19 @@ module.exports = {
 
 阅读 npm的文档， 我们会发现package 准确的定义，只要符合以下 a) 到 g) 其中之一条件，就是一个 package:
 
-#	说明	例子
-a)	一个包含了程序和描述该程序的 package.json 文件 的 文件夹	./local-module/
-b)	一个包含了 (a) 的 gzip 压缩文件	./module.tar.gz
-c)	一个可以下载得到 (b) 资源的 url (通常是 http(s) url)	https://registry.npmjs.org/webpack/-/webpack-4.1.0.tgz
-d)	一个格式为 <name>@<version> 的字符串，可指向 npm 源(通常是官方源 npmjs.org)上已发布的可访问 url，且该 url 满足条件 (c)	webpack@4.1.0
-e)	一个格式为 <name>@<tag> 的字符串，在 npm 源上该<tag>指向某 <version> 得到 <name>@<version>，后者满足条件 (d)	webpack@latest
-f)	一个格式为 <name> 的字符串，默认添加 latest 标签所得到的 <name>@latest 满足条件 (e)	webpack
-g)	一个 git url, 该 url 所指向的代码库满足条件 (a)	git@github.com:webpack/webpack.git
-2.2 安装本地包/远程git仓库包
+	例子
+
+| # | 说明 | 例子 |
+| ------| ------ | ------ |
+| a) | 一个包含了程序和描述该程序的 package.json 文件 的 文件夹 |  ./local-module/ |
+| b) | 一个包含了 (a) 的 gzip 压缩文件	 |  ./module.tar.gz |
+| c) | 一个可以下载得到 (b) 资源的 url (通常是 http(s) url) | https://registry.npmjs.org/webpack/-/webpack-4.1.0.tgz |
+| d) | 一个格式为 <name>@<version> 的字符串，可指向 npm 源(通常是官方源 npmjs.org)上已发布的可访问 url，且该 url 满足条件 (c) |  webpack@4.1.0 |
+| e) | 一个格式为 <name>@<tag> 的字符串，在 npm 源上该<tag>指向某 <version> 得到 <name>@<version>，后者满足条件 (d) | webpack@latest |		
+| f)| 一个格式为 <name> 的字符串，默认添加 latest 标签所得到的 <name>@latest 满足条件 (e)	| webpack| 
+| g)| 	一个 git url, 该 url 所指向的代码库满足条件 (a)| 	git@github.com:webpack/webpack.git
+  
+### 2.2 安装本地包/远程git仓库包| 
 上面表格的定义意味着，我们在共享依赖包时，并不是非要将包发表到 npm 源上才可以提供给使用者来安装。这对于私有的不方便 publish 到远程源（即使是私有源），或者需要对某官方源进行改造，但依然需要把包共享出去的场景来说非常实用。
 
 场景1: 本地模块引用
